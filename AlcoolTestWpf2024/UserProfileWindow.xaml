@@ -1,0 +1,35 @@
+﻿<Window x:Class="AlcoolTestWpf2024.UserProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Profil utilisateur" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Titre -->
+        <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Profil utilisateur" 
+               HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <!-- Poids -->
+        <Label Grid.Row="1" Content="Poids (en kg):" VerticalAlignment="Center"/>
+        <TextBox x:Name="PoidsTextBox" Width="150" Grid.ColumnSpan="2" Margin="114,51,96,0" Grid.RowSpan="2"/>
+
+        <!-- Sexe -->
+        <Label Grid.Row="2" Content="Sexe:" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="120,25,30,-25">
+            <RadioButton x:Name="HommeRadioButton" Content="Homme" GroupName="Sexe" IsChecked="True" Margin="0,0,20,0"/>
+            <RadioButton x:Name="FemmeRadioButton" Content="Femme" GroupName="Sexe"/>
+        </StackPanel>
+
+        <!-- Bouton Enregistrer -->
+        <Button Content="Enregistrer" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                HorizontalAlignment="Left" Width="150" Click="Enregistrer_Click" Margin="114,57,0,-57"/>
+    </Grid>
+</Window>
